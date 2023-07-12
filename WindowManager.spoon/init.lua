@@ -8,64 +8,64 @@ M.license = "MIT"
 local function tileLastWindowToLeft()
 	local windows = hs.window.filter.default:getWindows()
 
-	local Window = table.remove(windows, 1)
-	local secondWindow = table.remove(windows, 1)
+	local lastWindow = table.remove(windows, 1)
+	local secondlastWindow = table.remove(windows, 1)
 
 	hs.layout.apply({
-		{nil, Window, hs.window.focusedWindow():screen(), hs.layout.left50, nil, nil},
-		{nil, secondWindow, hs.window.focusedWindow():screen(), hs.layout.right50, nil, nil},
+		{nil, lastWindow, hs.window.focusedWindow():screen(), hs.layout.left50, nil, nil},
+		{nil, secondlastWindow, hs.window.focusedWindow():screen(), hs.layout.right50, nil, nil},
 	})
 end
 
 local function tileLastWindowToRight()
 	local windows = hs.window.filter.default:getWindows()
 
-	local Window = table.remove(windows, 1)
-	local secondWindow = table.remove(windows, 1)
+	local lastWindow = table.remove(windows, 1)
+	local secondlastWindow = table.remove(windows, 1)
 
 	hs.layout.apply({
-		{nil, Window, hs.window.focusedWindow():screen(), hs.layout.right50, nil, nil},
-		{nil, secondWindow, hs.window.focusedWindow():screen(), hs.layout.left50, nil, nil},
+		{nil, lastWindow, hs.window.focusedWindow():screen(), hs.layout.right50, nil, nil},
+		{nil, secondlastWindow, hs.window.focusedWindow():screen(), hs.layout.left50, nil, nil},
 	})
 end
 
 local function resizeLastWindowToRight()
 	local windows = hs.window.filter.default:getWindows()
 
-	local Window = table.remove(windows, 1)
+	local lastWindow = table.remove(windows, 1)
 
 	hs.layout.apply({
-		{nil, Window, hs.window.focusedWindow():screen(), hs.layout.right50, nil, nil},
+		{nil, lastWindow, hs.window.focusedWindow():screen(), hs.layout.right50, nil, nil},
 	})
 end
 
 local function resizeLastWindowToLeft()
 	local windows = hs.window.filter.default:getWindows()
 
-	local Window = table.remove(windows, 1)
+	local lastWindow = table.remove(windows, 1)
 
 	hs.layout.apply({
-		{nil, Window, hs.window.focusedWindow():screen(), hs.layout.left50, nil, nil},
+		{nil, lastWindow, hs.window.focusedWindow():screen(), hs.layout.left50, nil, nil},
 	})
 end
 
 local function maximizeLastWindow()
 	local windows = hs.window.filter.default:getWindows()
 
-	local Window = table.remove(windows, 1)
+	local lastWindow = table.remove(windows, 1)
 
 	hs.layout.apply({
-		{nil, Window, hs.window.focusedWindow():screen(), hs.layout.maximized, nil, nil},
+		{nil, lastWindow, hs.window.focusedWindow():screen(), hs.layout.maximized, nil, nil},
 	})
 end
 
 local function centerLastWindow()
 	local windows = hs.window.filter.default:getWindows()
 
-	local Window = table.remove(windows, 1)
+	local lastWindow = table.remove(windows, 1)
 
 	hs.layout.apply({
-		{nil, Window, hs.window.focusedWindow():screen(), hs.geometry.rect(0.15, 0, 0.7, 1.0), nil, nil},
+		{nil, lastWindow, hs.window.focusedWindow():screen(), hs.geometry.rect(0.15, 0, 0.7, 1.0), nil, nil},
 	})
 end
 
